@@ -1,9 +1,11 @@
+# https://adventofcode.com/2024/day/13
+
 import numpy as np
 
 def is_close_to_integer(value, tolerance=1e-10):
     return np.isclose(value, round(value), atol=tolerance)
 
-with open("./inputs/input_13.txt", "r") as file:
+with open("./inputs-2024/input_13.txt", "r") as file:
     input_text = file.read()
 
     lines = input_text.strip().split('\n')

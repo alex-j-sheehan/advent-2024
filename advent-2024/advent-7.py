@@ -1,3 +1,5 @@
+# https://adventofcode.com/2024/day/7
+
 # Convert Base-10 to Base-3
 def ternary (n, min_digits=0):
     if n == 0:
@@ -11,7 +13,7 @@ def ternary (n, min_digits=0):
 
     return result.zfill(min_digits)
 
-with open("./inputs/input_7.txt", "r") as file:
+with open("./inputs-2024/input_7.txt", "r") as file:
     running_value = 0
     for line in file:
         split = line.split(':')

@@ -1,3 +1,5 @@
+# https://adventofcode.com/2024/day/8
+
 from pprint import pprint
 from math import sqrt, gcd
 
@@ -84,7 +86,7 @@ def mirror_points_indef(grid, point, ref_point):
 
 found_antinodes = set()
 
-with open("./inputs/input_8.txt", "r") as file:
+with open("./inputs-2024/input_8.txt", "r") as file:
     input_text = file.read()
 
     lines = input_text.strip().split('\n')

@@ -1,6 +1,8 @@
+# https://adventofcode.com/2024/day/4
+
 word_array = []
 
-with open("./inputs/input_4.txt","r", encoding="utf8") as file:
+with open("./inputs-2024/input_4.txt","r", encoding="utf8") as file:
     for line in file:
         line_array = []
         for char in line:

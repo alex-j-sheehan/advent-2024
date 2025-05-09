@@ -1,3 +1,5 @@
+# https://adventofcode.com/2024/day/14
+
 from collections import Counter
 
 GRID_LENGTH = 101
@@ -92,7 +94,7 @@ def calculate_quadrant(p):
     return quadrant
 
 
-with open("./inputs/input_14.txt", "r") as file:
+with open("./inputs-2024/input_14.txt", "r") as file:
     input_text = file.read()
 
     lines = input_text.strip().split('\n')
@@ -127,3 +129,9 @@ with open("./inputs/input_14.txt", "r") as file:
             print_guards(new_positions)
         
         guards = new_guards
+    
+sum = 1
+for quadrant in quadrants:
+    sum *= quadrants[quadrant]
+
+print(f"sum from multiplying number of robots in each quadrant: {sum}")

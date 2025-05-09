@@ -1,3 +1,5 @@
+# https://adventofcode.com/2024/day/11
+
 from pprint import pprint
 from collections import Counter
 from copy import copy
@@ -47,7 +49,7 @@ def apply_rules(zeros, evens, to_multiply):
     return new_to_mult + other_new_mult + other_other_to_mult_copy, zeros + zeros_copy, evens_copy + other_evens_copy
 
 
-with open("./inputs/input_11.txt", "r") as file:
+with open("./inputs-2024/input_11.txt", "r") as file:
     # Setup
     input_text = file.read()
     zeros = Counter()

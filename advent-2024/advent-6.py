@@ -1,3 +1,5 @@
+# https://adventofcode.com/2024/day/6
+
 def solve_guard_puzzle(input_text):
     lines = input_text.strip().split('\n')
     grid = [list(line) for line in lines]
@@ -105,7 +107,7 @@ def solve_guard_puzzle(input_text):
     
     return part1_answer, len(loop_creating_obstacles)
 
-with open("./inputs/input_6.txt", "r") as file:
+with open("./inputs-2024/input_6.txt", "r") as file:
     input_text = file.read()
 
 part1, part2 = solve_guard_puzzle(input_text)
