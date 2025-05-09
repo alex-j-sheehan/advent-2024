@@ -27,7 +27,6 @@ def find_points_on_line(grid, p1, p2):
     
     return antinodes
 
-
 def find_distance(p1, p2):
     x1, y1 = p1
     x2, y2 = p2
@@ -98,8 +97,6 @@ with open("./inputs/input_8.txt", "r") as file:
                     frequencies[char].append([x, y])
                 else:
                     frequencies[char] = [[x, y]]
-
-    print('Processed antennas, sorted frequency locations')
 
     for key, frequency in frequencies.items():
         for index, coord in enumerate(frequency):

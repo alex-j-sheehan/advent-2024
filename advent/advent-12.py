@@ -1,4 +1,6 @@
 from pprint import pprint
+
+# Part 1:
 # def check_down(grid, x, y, value):
 #     if y < (len(grid[x]) - 1):
 #         if value == grid[x][y + 1]:
@@ -22,7 +24,6 @@ from pprint import pprint
 #         if value == grid[x + 1][y]:
 #             return True
 #     return False
-
 
 # def find_all_attached_nodes(grid, coord, found, num_nodes=0, area_cost = 0, exposed_sides=0):
 #     x, y = coord
@@ -177,9 +178,14 @@ def find_all_attached_nodes(grid, coord, found, num_nodes=0, area_cost = 0, expo
 
     return exposed_sides, found, num_nodes
 
-def count_tota_sides(found_items):
+def count_total_sides(found_items):
+    # With the set of found guarden plot coords, count the total number of sides for the whole plot
     unique_sides = 0
     for item in found_items:
+        # In order to count unique sides, increment when finding the plot that is on the left most relational point of the side
+        # This means there are no found coords to the 'left' of the current item- meaning we're at the drop off end of the side
+        # OR there is a point 'up' and 'left' of the current item- meaning we're at the interior corner of a side
+
         x, y, v = item
         # UP
         if (x - 1, y, v) not in found_items and ((x, y - 1, v) not in found_items or (x - 1, y - 1, v) in found_items):
@@ -210,7 +216,7 @@ with open("./inputs/input_12.txt", "r") as file:
             if (x, y, grid[x][y]) not in found:
                 exposed_sides, new_found, num_nodes = find_all_attached_nodes(grid, (x,y), set())
 
-                unique_sides = count_tota_sides(new_found)
+                unique_sides = count_total_sides(new_found)
                 found = found.union(new_found)
                 total_cost += unique_sides * num_nodes
                 print(f"garden of {grid[x][y]} has unique_sides!: {unique_sides}")

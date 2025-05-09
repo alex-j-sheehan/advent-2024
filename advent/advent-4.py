@@ -50,9 +50,7 @@ def check_diag_right_down(word_array, x, y):
                 try:
                     down_right_diag_string += column[y + itr]
                 except Exception as exc:
-                    import pdb;
-                    pdb.set_trace()
-                    p = 10
+                    print(f"something went wrong: {exc}")
 
             if (down_right_diag_string == 'XMAS' or down_right_diag_string[::-1] == 'XMAS'):
                 print(f"FOUND DOWN RIGHT DIAG {list(down_right_diag_string)}!")
@@ -80,9 +78,6 @@ def check_surrounding_corners(word_array, x, y):
     return False
 
 def check_x_mas(word_array, x, y, num_found):
-    # if x == 8 and y == 8:
-    #     import pdb;
-    #     pdb.set_trace()
     if word_array[x][y] == 'A':
         if y > 0 and y <= len(word_array[x]) - 2:
             if x > 0 and x <= len(word_array) - 2:
@@ -94,8 +89,5 @@ num_found = 0
 for index_x, x in enumerate(word_array):
     for index_y, y in enumerate(x):
         num_found = check_x_mas(word_array, index_x, index_y, num_found)
-        # num_found = check_xmas(word_array, index_x, index_y, num_found)
 
-import pdb;
-pdb.set_trace()
 print(num_found)

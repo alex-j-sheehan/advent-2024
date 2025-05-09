@@ -36,7 +36,8 @@ with open("./inputs/input_13.txt", "r") as file:
             # Constants vector b
             b = np.array([prize_x, prize_y])
 
-            # Solve the system
+            # Solve the system- 
+            # We're essentially given two linear equations for X and Y and can therefore solve
             solution = np.linalg.solve(A, b)
 
             x,y = solution
@@ -46,10 +47,11 @@ with open("./inputs/input_13.txt", "r") as file:
                     # We have to round instead of casting to int
                     x_int = round(x)
                     y_int = round(y)
-                    # Now that we've rounded, double make sure the rounded numbers fit our equation
+                    # Now that we've rounded, doublely make sure the rounded numbers fit our equation
                     x_check = x_int * button_a_x + y_int * button_b_x
                     y_check = x_int * button_a_y + y_int * button_b_y
                     if x_check == prize_x and y_check == prize_y:
+                        # If so, increment our total accounting for A button presses taking 3 tokens
                         total += (x_int * 3) + y_int
 
     print(total)

@@ -1,11 +1,11 @@
 from pprint import pprint
+
 class Node:
     def __init__(self, value, children=None):
         self.children = children if children is not None else set()
         self.value = value
     
     def __repr__(self):
-        # for x in self.children:
         return(f"VALUE: {self.value}, BEFORE: {[child.value for child in self.children]}")
     
     def merge_with(self, node):
@@ -21,7 +21,6 @@ class Node:
         return False
 
 def follow_children_for_value(hierarchies, hierarchy, value, found=None, depth=0, path=None):
-    # Initialize tracking variables on first call
     if found is None:
         found = set()
     if path is None:
@@ -29,33 +28,27 @@ def follow_children_for_value(hierarchies, hierarchy, value, found=None, depth=0
     else:
         path = path + [hierarchy.value]
     
-    # Add current hierarchy to visited set to avoid cycles
     found.add(hierarchy)
     
-    # Check all children of current hierarchy
     for child in hierarchy.children:
         print(f"Examining child: {child.value}")
         
-        # Direct match - we found the value we're looking for
         if int(child.value) == int(value):
             print(f"FOUND! {value} is a direct child of {hierarchy.value}")
             print(f"Complete path to {value}: {path} → {child.value}")
             return True
         
-        # Check if the child has its own hierarchy we haven't explored
         child_hierarchy = hierarchies.get(child.value)
         if child_hierarchy and child_hierarchy not in found:
             print(f"Exploring hierarchy of child: {child.value}")
             
-            # If we find the value in this child's hierarchy, return True
             if follow_children_for_value(hierarchies, child_hierarchy, value, found, depth+1, path):
                 print(f"Chain complete: {value} is a descendant of {hierarchy.value} through {child.value}")
                 return True
     
-    # If we've checked all children and didn't find the value, return False
     print(f"Finished checking all children of {hierarchy.value}, {value} not found in this branch")
     return False
-        
+
 
 def do_the_thing(items, hierarchies_2):
     for index, item in enumerate(items):
@@ -128,13 +121,9 @@ with open("./inputs/input_5.txt","r", encoding="utf8") as file:
                             if not has_inserted:
                                 new_list.insert(insert_index, thing)
 
-                        # import pdb;
-                        # pdb.set_trace()
-                        # p = 10
                         break
 
             if not is_valid:
-
                 break
     
         if item != '':
@@ -152,8 +141,6 @@ for x in fixed_codes:
     else:
         new_rolling += int(x[int(len(x)/2)])
 
-import pdb;
-pdb.set_trace()
 print("running_valid_sum: " + str(running_valid_sum))
 print("running_sum: " + str(running_sum))
     
