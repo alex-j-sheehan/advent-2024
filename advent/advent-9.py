@@ -20,7 +20,6 @@ for index, char in enumerate(input_text):
 def find_free_space(block, file_length, file_start):
     curr = 0
     while curr < file_start:
-
         x = block[curr]
         if x == '.':
             length = get_free_len(block, curr)
@@ -48,10 +47,6 @@ def get_free_len(block, start):
 
 def get_file_len(block, file):
     file_id = block[file]
-    if file_id == '.':
-        print("something_went_wrong")
-        import pdb;
-        pdb.set_trace()
     curr = file
     length = 0
     while block[curr] == file_id and curr >= 0:
@@ -83,8 +78,8 @@ while y > 0:
             farthest_up_memory_injection_index = free_space_start
         else:
             print(f'failed to shift file: {file_id}, no suitable space found')
-
     y -= 1
+
 rolling_sum = 0
 for index, x in enumerate(memory_array):
     if x != '.':

@@ -39,6 +39,8 @@ def check_for_continuous_guards(guards):
             segment_lengths.append(segment_length)
 
     for segment in segment_lengths:
+        # Bit of massaging here to find the right threshold
+        # Had to play with this as we don't know how big/how many nodes make up the tree
         if segment > 30:
             return True
 
@@ -70,6 +72,7 @@ def calculate_future_position(velocity, position, seconds):
     return (current_x, current_y)
 
 def calculate_quadrant(p):
+    # Quandrant number doesn't matter so long as it's consistent 
     x, y = p
     quadrant = 1
 

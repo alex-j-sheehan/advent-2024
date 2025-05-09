@@ -25,7 +25,6 @@ def solve_guard_puzzle(input_text):
         (0, -1): (-1, 0)   # Left -> Up
     }
     
-    # Part 1: Simulate guard's path
     def simulate_basic_path(grid, start_pos, start_dir):
         visited = set([start_pos])
         pos = start_pos
@@ -51,11 +50,9 @@ def solve_guard_puzzle(input_text):
         
         return visited
     
-    # Part 1 solution
     visited = simulate_basic_path(grid, start_pos, start_dir)
     part1_answer = len(visited)
-    
-    # Part 2: Check for loops with added obstacles
+
     def would_create_loop(grid, start_pos, start_dir, obstacle_pos):
         # Create a state key: (position, direction)
         state_history = {}
@@ -63,7 +60,7 @@ def solve_guard_puzzle(input_text):
         dir = start_dir
         step = 0
         
-        # Maximum steps to prevent infinite loops (can adjust based on grid size)
+        # Maximum steps to prevent infinite loops
         max_steps = 4 * len(grid) * len(grid[0])
         
         while step < max_steps:
@@ -98,7 +95,6 @@ def solve_guard_puzzle(input_text):
         # we'll assume it's not a valid loop configuration
         return False
     
-    # Part 2 solution
     loop_creating_obstacles = []
     for i in range(len(grid)):
         for j in range(len(grid[i])):
@@ -109,7 +105,6 @@ def solve_guard_puzzle(input_text):
     
     return part1_answer, len(loop_creating_obstacles)
 
-# Main execution
 with open("./inputs/input_6.txt", "r") as file:
     input_text = file.read()
 

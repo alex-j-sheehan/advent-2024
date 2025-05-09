@@ -1,3 +1,4 @@
+# Convert Base-10 to Base-3
 def ternary (n, min_digits=0):
     if n == 0:
         return '0'.zfill(min_digits)
@@ -36,4 +37,5 @@ with open("./inputs/input_7.txt", "r") as file:
                 running_value += candidate
                 print("found!")
                 break
+
 print(running_value)

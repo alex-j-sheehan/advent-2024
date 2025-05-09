@@ -54,6 +54,8 @@ def get_trailhead_score(grid, trailhead, path=[], paths=set(), level=0):
     
     return paths
 
+# PART 1 CODE 
+
 # def get_trailhead_score(grid, trailhead, found=set(), found_9s=set(), level=0):
 #     curr_x = trailhead[0]
 #     curr_y = trailhead[1]
@@ -133,6 +135,5 @@ with open("./inputs/input_10.txt", "r") as file:
                     level=0
                 )
                 rolling_sum += len(trailhead_score)
-    import pdb;
-    pdb.set_trace()
-    p = 10
+
+    print(f"Rolling sum: {rolling_sum}")
