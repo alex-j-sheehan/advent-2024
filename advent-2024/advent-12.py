@@ -1,3 +1,5 @@
+# https://adventofcode.com/2024/day/12
+
 from pprint import pprint
 
 # Part 1:
@@ -81,7 +83,7 @@ from pprint import pprint
 #     return exposed_sides, found, num_nodes
 
 
-# with open("./inputs/input_12.txt", "r") as file:
+# with open("./inputs-2024/input_12.txt", "r") as file:
 #     input_text = file.read()
 
 #     lines = input_text.strip().split('\n')
@@ -204,7 +206,7 @@ def count_total_sides(found_items):
             unique_sides += 1
     return unique_sides
 
-with open("./inputs/input_12.txt", "r") as file:
+with open("./inputs-2024/input_12.txt", "r") as file:
     input_text = file.read()
 
     lines = input_text.strip().split('\n')

@@ -1,3 +1,5 @@
+# https://adventofcode.com/2024/day/2
+
 def check_safe(levels, decreasing, safe=True):
     for index, level in enumerate(levels):
         if isinstance(level, str):
@@ -38,7 +40,7 @@ def check_safe(levels, decreasing, safe=True):
     return safe
 
 
-with open("./inputs/input_2.txt","r", encoding="utf8") as file:
+with open("./inputs-2024/input_2.txt","r", encoding="utf8") as file:
     num_safe = 0
     for report in file:
         levels = report.split(' ')

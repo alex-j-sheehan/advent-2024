@@ -1,3 +1,5 @@
+# https://adventofcode.com/2024/day/5
+
 from pprint import pprint
 
 class Node:
@@ -60,7 +62,7 @@ def do_the_thing(items, hierarchies_2):
     return True
 
 
-with open("./inputs/input_5.txt","r", encoding="utf8") as file:
+with open("./inputs-2024/input_5.txt","r", encoding="utf8") as file:
     hierarchies = []
     hierarchies_2 = {}
     codes_to_check = []

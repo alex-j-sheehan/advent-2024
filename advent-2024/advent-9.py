@@ -1,6 +1,8 @@
+# https://adventofcode.com/2024/day/9
+
 from pprint import pprint
 
-with open("./inputs/input_9.txt", "r") as file:
+with open("./inputs-2024/input_9.txt", "r") as file:
     input_text = file.read().strip('\n')
 
 id = 0

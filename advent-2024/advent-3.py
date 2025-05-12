@@ -1,4 +1,6 @@
-with open("./inputs/input_3.txt","r", encoding="utf8") as file:
+# https://adventofcode.com/2024/day/3
+
+with open("./inputs-2024/input_3.txt","r", encoding="utf8") as file:
     rolling_sum = 0
     enabled = True
     for line in file:

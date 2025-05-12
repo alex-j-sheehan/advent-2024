@@ -1,3 +1,5 @@
+# https://adventofcode.com/2024/day/10
+
 from pprint import pprint
 
 def get_trailhead_score(grid, trailhead, path=[], paths=set(), level=0):
@@ -115,7 +117,7 @@ def get_trailhead_score(grid, trailhead, path=[], paths=set(), level=0):
 #     return found_9s
 
 
-with open("./inputs/input_10.txt", "r") as file:
+with open("./inputs-2024/input_10.txt", "r") as file:
     input_text = file.read()
 
     lines = input_text.strip().split('\n')
